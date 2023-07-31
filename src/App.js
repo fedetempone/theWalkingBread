@@ -1,7 +1,7 @@
 import Home from './components/home/Home';
 import Contact from './components/contact/Contact'
 import Cart from './components/cart/Cart';
-import { HashRouter, Routes, Route, HashRouter } from 'react-router-dom';
+import {Routes, Route, HashRouter } from 'react-router-dom';
 import Products from './components/products/Products';
 import AboutUs from './components/aboutUs/AboutUs';
 
