@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/fedetempone/twd/static/css/main.57fc5689.css",
-    "main.js": "/fedetempone/twd/static/js/main.31288ddb.js",
-    "static/media/bannerZombie1re-size.png": "/fedetempone/twd/static/media/bannerZombie1re-size.093d9dc3a46778ce1683.png",
-    "static/media/navlogo.png": "/fedetempone/twd/static/media/navlogo.3adf37facd7bbd45059d.png",
-    "static/media/dead_kansas.woff": "/fedetempone/twd/static/media/dead_kansas.354675bdd9aa90d8999b.woff",
-    "static/media/dead_kansas.woff2": "/fedetempone/twd/static/media/dead_kansas.6a385d31ea46f8a08e3c.woff2",
-    "static/media/icon_shopping_cart.svg": "/fedetempone/twd/static/media/icon_shopping_cart.995748b73b8792b4b60fd1ed0515faaa.svg",
-    "index.html": "/fedetempone/twd/index.html",
-    "main.57fc5689.css.map": "/fedetempone/twd/static/css/main.57fc5689.css.map",
-    "main.31288ddb.js.map": "/fedetempone/twd/static/js/main.31288ddb.js.map"
+    "main.css": "/twd/static/css/main.5597fba0.css",
+    "main.js": "/twd/static/js/main.1760fbf2.js",
+    "static/media/bannerZombie1re-size.png": "/twd/static/media/bannerZombie1re-size.093d9dc3a46778ce1683.png",
+    "static/media/navlogo.png": "/twd/static/media/navlogo.3adf37facd7bbd45059d.png",
+    "static/media/dead_kansas.woff": "/twd/static/media/dead_kansas.354675bdd9aa90d8999b.woff",
+    "static/media/dead_kansas.woff2": "/twd/static/media/dead_kansas.6a385d31ea46f8a08e3c.woff2",
+    "static/media/icon_shopping_cart.svg": "/twd/static/media/icon_shopping_cart.995748b73b8792b4b60fd1ed0515faaa.svg",
+    "index.html": "/twd/index.html",
+    "main.5597fba0.css.map": "/twd/static/css/main.5597fba0.css.map",
+    "main.1760fbf2.js.map": "/twd/static/js/main.1760fbf2.js.map"
   },
   "entrypoints": [
-    "static/css/main.57fc5689.css",
-    "static/js/main.31288ddb.js"
+    "static/css/main.5597fba0.css",
+    "static/js/main.1760fbf2.js"
   ]
 }
