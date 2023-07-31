@@ -1,0 +1,14 @@
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    font-family: 'dead_kansasregular' !important;
+  }
+
+  @font-face {
+    font-family: 'dead_kansasregular';
+    src: url('dead_kansas.woff2') format('woff2'),
+         url('dead_kansas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

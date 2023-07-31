@@ -1,0 +1,276 @@
+.topheader {
+    box-shadow: 0 4px 7px 0 rgb(0 0 0 / 42%);
+    position: fixed;
+    background-color: #17181a;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-height: 100px;
+    z-index: 99;
+}
+
+.imgLogo {
+    height: 75px;
+    width: 85px;
+    padding: 10px 0 10px 10px;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+/* Menu */
+.menu {
+    position: absolute;
+    top: -132px;
+    left: -2000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.menu.active {
+    width: 100%;
+    display: block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 4rem;
+    padding: 0;
+    transition: all .6s ease;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu li {
+    padding: 0 15px;
+    list-style: none;
+}
+
+.menu a {
+    color: #fd0404;;
+    font-size: 3vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.imgCart{
+    filter: invert(99%) sepia(1%) saturate(2%) hue-rotate(238deg) brightness(110%) contrast(100%);
+}
+
+/* CARRITO DE COMPRAS */
+.navbar-shopping-cart {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.navbar-shopping-cart div {
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    position: initial;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fd0404;;
+}
+
+.product-shopCar {
+    width: 360px;
+    background: #ffffff;
+    padding: 24px;
+    box-sizing: border-box;
+    position: fixed;
+    right: 31px;
+    top: 128px;
+    z-index: 9999999;
+}
+
+.title-container {
+    display: flex;
+}
+
+.title-container img {
+    transform: rotate(180deg);
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: var(--lg);
+    font-weight: bold;
+}
+
+.order {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 0 24px;
+}
+
+.order p:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+
+.order p span:nth-child(1) {
+    font-size: var(--md);
+    font-weight: bold;
+}
+
+.order p:nth-child(2) {
+    text-align: end;
+    font-weight: bold;
+}
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+    grid-auto-rows: 70px;
+    height: 23em;
+    overflow-y: scroll;
+}
+
+.shopping-cart img {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.shopping-cart figure {
+    margin: 0;
+}
+
+.shopping-cart figure img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.shopping-cart p {
+    color: var(--md);
+}
+
+.primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+
+/* BOTON WHATSAPP FLOTANTE */
+.whatsapp {
+    padding: 2px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 8px;
+    right: 3px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100000 !important;
+}
+
+.whatsapp-icon {
+    margin-top: 13px;
+}
+
+.whatsapp:hover {
+    transition: all .3s;
+    transition-duration: 1s;
+    filter: opacity(.5);
+}
+
+.menu-active{
+    background-color: #3b3535;
+    position: absolute;
+    top: 132px;
+    left: -2000px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all .6s ease;
+}
+
+.menu-active.active {
+    border-radius: 0 0 86% 0;
+    top: 82px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (min-width: 768px ){
+    .menu{
+        position: initial;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu a:hover {
+        color: #da8321;
+    }
+
+    .menu-active.active {
+        display: none;
+    }
+
+    .menu.active {
+        
+        width: auto;
+        width: auto;
+        display: flex;
+        position: initial;
+        margin: 0px;
+    }
+
+    .navbar-shopping-cart {
+        margin-top: 0px;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+    }
+
+    .menu-active{
+        display: none;
+    }
+
+}

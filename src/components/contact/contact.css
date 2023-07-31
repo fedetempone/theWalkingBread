@@ -1,0 +1,129 @@
+.info-form{
+    text-align: center;
+    padding: 25px;
+}
+
+#container-form{
+    width: 100%;
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 42px 0px;
+    top: 40x;
+}
+
+#container-form h2{
+    margin-bottom: 15px;
+    font-size: 35px;
+    text-decoration: underline;
+    font-weight: 100;
+}
+
+#container-form h3{
+    font-weight: 100;
+    color: #fd0404;
+}
+
+#container-form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 100;
+}
+
+#container-form a i{
+    color: #fd0404;
+    margin-right: 10px;
+}
+
+#container-form a i:hover{
+    color: black;
+}
+
+#container-form a:hover{
+    color: #fd0404;
+}
+
+#container-form form .campo{
+    width: 93%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    outline: 0px;
+    margin: 6px;
+}
+
+#container-form textarea{
+    width: 93%;
+    height: 270px;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+    margin: 6px;
+}
+
+#container-form .btn-enviar{
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0px;
+    background: #fd0404;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin: 6px;
+}
+
+#container-form .btn-enviar:hover{
+    background: #fd0404;
+}
+
+#sobre-nosotros-contact-form{
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-contact-form{
+    align-items: center;
+    width: auto;
+}
+
+.navigation-contact-form a:hover{
+    color: #fd0404;
+}
+
+.navigation-contact-form h1{
+    text-align: center;
+}
+
+.new-line {
+    font-weight: 100;
+    white-space: pre-line;
+}
+
+
+@media (min-width: 750px){
+    #container-form{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 50px;
+    }
+
+    .info-form {
+        text-align: initial;
+    }
+
+    form{
+        margin-top: 40px;
+    }
+}
+
