@@ -245,7 +245,7 @@ a {
     }
 
     .menu a:hover {
-        color: #da8321;
+        color: white;
     }
 
     .menu-active.active {
@@ -273,4 +273,7 @@ a {
         display: none;
     }
 
+    .navLinksFooter ul li a:hover {
+        color: white;
+    }
 }

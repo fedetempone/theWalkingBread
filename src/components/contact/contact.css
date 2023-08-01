@@ -11,11 +11,12 @@
     margin-top: 20px;
     padding: 42px 0px;
     top: 40x;
+    margin-top: 55px;    
 }
 
 #container-form h2{
     margin-bottom: 15px;
-    font-size: 35px;
+    font-size: 22px;
     text-decoration: underline;
     font-weight: 100;
 }
@@ -33,6 +34,7 @@
     margin-bottom: 15px;
     color: black;
     font-weight: 100;
+    word-wrap: break-word;
 }
 
 #container-form a i{
@@ -49,7 +51,7 @@
 }
 
 #container-form form .campo{
-    width: 93%;
+    width: 82%;
     padding: 15px 10px;
     font-size: 16px;
     border: 1px solid #dbdbdb;
@@ -59,7 +61,7 @@
 }
 
 #container-form textarea{
-    width: 93%;
+    width: 82%;
     height: 270px;
     padding: 15px 10px;
     font-size: 16px;
@@ -84,7 +86,9 @@
 }
 
 #container-form .btn-enviar:hover{
-    background: #fd0404;
+    background: white;
+    color: #fd0404;
+    border: #fd0404 1px solid;
 }
 
 #sobre-nosotros-contact-form{
@@ -111,6 +115,11 @@
 }
 
 
+form{
+    text-align: center;
+}
+
+
 @media (min-width: 750px){
     #container-form{
         display: grid;
@@ -124,6 +133,37 @@
 
     form{
         margin-top: 40px;
+    }
+}
+
+@media (max-width: 200px){
+    #container-form h2 {
+        font-size: smaller;
+    }
+
+    #container-form h3 {
+        font-size: 13px;
+    }
+
+    #container-form a {
+        font-size: 11px;
+        text-align: initial;
+    }
+
+    #container-form .btn-enviar {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    #container-form form .campo {
+        width: 70%;
+        font-size: 11px;
+    }
+
+    #container-form textarea {
+        width: 70%;
+        font-size: 11px;
+        height: 210px;
     }
 }
 

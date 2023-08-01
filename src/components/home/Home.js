@@ -1,6 +1,7 @@
 import Navbar from '../navbar/Navbar'
 import '../home/home.css'
 import Footer from '../footer/Footer';
+import Description from '../description/Description';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
               <p>SABORES QUE DESPIERTAN DE ENTRE LOS MUERTOS</p>
             </div>
       </div>
+      <Description/>
       <Footer/>
     </>
     
