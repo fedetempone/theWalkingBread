@@ -8,10 +8,10 @@ function Footer() {
         <nav className="navFooter">
             <div className="navLinksFooter">
                 <ul>
-                    <li><a href="./html/shop.html">ABOUT US</a></li>
-                    <li><a href="./html/login.html">QUALITY POLITICS</a></li>
-                    <li><a href="./html/login.html">NEWSLETTER</a></li>
-                    <li><a href="./html/contact.html">CONTACT</a></li>
+                    <li><a href="/about">ABOUT US</a></li>
+                    <li><a href="/">QUALITY POLITICS</a></li>
+                    <li><a href="/">NEWSLETTER</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
                 </ul>
             </div>
             <div className="logoFooter">

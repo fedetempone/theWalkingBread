@@ -6,7 +6,7 @@ function Home() {
   return (
     <>  
       <div className='hola'>
-          <Navbar className="hola2"/>
+          <Navbar/>
             <div className='content banner-container clearfix'>
             {/* la imagen se mete aca adentro desde css */}
             </div>
