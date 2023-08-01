@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/twd/static/css/main.5597fba0.css",
-    "main.js": "/twd/static/js/main.2db122cb.js",
+    "main.css": "/twd/static/css/main.94531bdf.css",
+    "main.js": "/twd/static/js/main.14d6b62c.js",
     "static/media/bannerZombie1re-size.png": "/twd/static/media/bannerZombie1re-size.093d9dc3a46778ce1683.png",
     "static/media/navlogo.png": "/twd/static/media/navlogo.3adf37facd7bbd45059d.png",
     "static/media/dead_kansas.woff": "/twd/static/media/dead_kansas.354675bdd9aa90d8999b.woff",
     "static/media/dead_kansas.woff2": "/twd/static/media/dead_kansas.6a385d31ea46f8a08e3c.woff2",
     "static/media/icon_shopping_cart.svg": "/twd/static/media/icon_shopping_cart.995748b73b8792b4b60fd1ed0515faaa.svg",
     "index.html": "/twd/index.html",
-    "main.5597fba0.css.map": "/twd/static/css/main.5597fba0.css.map",
-    "main.2db122cb.js.map": "/twd/static/js/main.2db122cb.js.map"
+    "main.94531bdf.css.map": "/twd/static/css/main.94531bdf.css.map",
+    "main.14d6b62c.js.map": "/twd/static/js/main.14d6b62c.js.map"
   },
   "entrypoints": [
-    "static/css/main.5597fba0.css",
-    "static/js/main.2db122cb.js"
+    "static/css/main.94531bdf.css",
+    "static/js/main.14d6b62c.js"
   ]
 }
