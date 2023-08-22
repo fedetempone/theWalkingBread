@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/fontawesome-free-solid';
 import { faWhatsapp } from '@fortawesome/fontawesome-free-brands';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
+import cupcakes from '../images/cupcakes2.jpg'
 import '@fortawesome/fontawesome-free/css/all.css'; 
 
 import '../description/description.css';
@@ -24,11 +25,11 @@ function Description() {
           <p className='servicesDescriptionSchedule'>Horario de atención de 7 a 21 hs.</p>
         </div>
         <div className="services cardServices services-border">
-          <p className="servicesDescription">
+          <div className="servicesDescription">
             <FontAwesomeIcon icon={faCreditCard} />
             <div className="servicesLine"></div>
             <span style={{ marginLeft: '10px' }}>PAGA CON TARJETA</span>
-          </p>
+          </div>
           <p className='servicesDescriptionSchedule'>Tarjeta de crédito, débito, efectivo o MercadoPago.</p>
         </div>
         <div className="services orderServices">
@@ -68,6 +69,19 @@ function Description() {
           </div>
         </Link>
       </div>
+      <div className="customizedContainer">
+          <h2 className='customizedText'>
+            PERSONALIZÁ
+          </h2>
+        </div>
+        <div className="budget">
+          <img src={cupcakes} alt="" />
+          <div className="module-text">
+            <h3>PRESUPUESTOS EN EL ACTO</h3>
+            <p>Te asesoramos y armamos los pedidos a tu medida !</p>
+            <a href=""><button>CUSTOMIZE</button></a>
+          </div>
+        </div>
     </>
   );
 }

@@ -17,7 +17,6 @@ function Navbar() {
   const isProductsPage = location.pathname === '/products';
   const isHomePage = location.pathname === '/';
   const isAboutUsPage = location.pathname === '/about';
-  console.log(isProductsPage)
 
   return (
     <>
