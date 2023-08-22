@@ -3,7 +3,7 @@ import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 
 function Contact() {
-    const message = `\n Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 18hs, ante consultas o sugerencias dejanos tu mensaje. Gracias !`;
+    const message = `\n Nuestro horario de atencion es de Lunes a Viernes de 07:00 a 21hs, ante consultas o sugerencias dejanos tu mensaje. Gracias !`;
   return (
     <>  
     <Navbar/>    

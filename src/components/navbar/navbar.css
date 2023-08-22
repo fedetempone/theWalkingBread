@@ -216,7 +216,7 @@ a {
 }
 
 .menu-active{
-    background-color: #3b3535;
+    background-color: #17181a;
     position: absolute;
     top: 132px;
     left: -2000px;
@@ -228,7 +228,7 @@ a {
 
 .menu-active.active {
     border-radius: 0 0 86% 0;
-    top: 82px;
+    top: 95px;
     left: 0;
     width: 100vw;
     height: 100vh;

@@ -33,12 +33,12 @@
   }
 
   .banner-text p{
-    font-size: 6.6vw;
+    font-size: 5.6vw;
     color: black;
   }
 
   @media (min-width: 750px){
     .banner-text p {
-        font-size: 4.6vw;
+        font-size: 3.6vw;
     }
   }
