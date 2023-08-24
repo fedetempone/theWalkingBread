@@ -2,6 +2,10 @@ import Navbar from '../navbar/Navbar'
 import '../home/home.css'
 import Footer from '../footer/Footer';
 import Description from '../description/Description';
+import Customize from '../customize/Customize';
+import Newsletter from '../newsletter/Newsletter';
+import Divisors from '../divisors/Divisors';
+import SocialMedia from '../social-media/SocialMedia';
 
 function Home() {
   return (
@@ -16,6 +20,12 @@ function Home() {
             </div>
       </div>
       <Description/>
+      <Divisors text="PERSONALIZÁ"/>
+      <Customize/>
+      <Divisors text="NEWSLETTER"/>
+      <Newsletter/>
+      <Divisors text= "ENVIANOS UN MENSAJE"/>
+      <SocialMedia/>
       <Footer/>
     </>
     

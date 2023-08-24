@@ -7,9 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/fontawesome-free-solid';
 import { faWhatsapp } from '@fortawesome/fontawesome-free-brands';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
-import cupcakes from '../images/cupcakes2.jpg'
 import '@fortawesome/fontawesome-free/css/all.css'; 
-
+import Customize from '../customize/Customize';
 import '../description/description.css';
 
 function Description() {
@@ -43,7 +42,7 @@ function Description() {
       <div className="containerDescription">
         <Link to="/sandwich" className='anchorSandwiches'>
           <div className="containerImgDescription">
-            <img className='imagencita' src={img_sandwich} alt="Imagen descriptiva sandwiches" />
+            <img src={img_sandwich} alt="Imagen descriptiva sandwiches" />
             <div className="text-overlay">
               <div className="textShape"></div>
               <p>SANDWICHES DE MIGA</p>
@@ -69,19 +68,6 @@ function Description() {
           </div>
         </Link>
       </div>
-      <div className="customizedContainer">
-          <h2 className='customizedText'>
-            PERSONALIZÁ
-          </h2>
-        </div>
-        <div className="budget">
-          <img src={cupcakes} alt="" />
-          <div className="module-text">
-            <h3>PRESUPUESTOS EN EL ACTO</h3>
-            <p>Te asesoramos y armamos los pedidos a tu medida !</p>
-            <a href=""><button>CUSTOMIZE</button></a>
-          </div>
-        </div>
     </>
   );
 }

@@ -1,0 +1,21 @@
+.containerTriangle {
+    position: relative;
+    padding-top: 46px;
+  }
+  
+  .triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 76vh solid #d3d3d31f;
+    border-left: 181vw solid transparent;
+    z-index: -1;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  
