@@ -14,7 +14,7 @@ function Navbar() {
 
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
-  const isProductsPage = location.pathname === '/products';
+  const isProductsPage = location.pathname === '/productos';
   const isHomePage = location.pathname === '/';
   const isAboutUsPage = location.pathname === '/about';
 
@@ -43,7 +43,7 @@ function Navbar() {
             
             {!isProductsPage ? (
               <li>
-                <Link to="/products">Products</Link>
+                <Link to="/productos">Products</Link>
               </li>
             ): <li>
                 <Link to="/">Home</Link>

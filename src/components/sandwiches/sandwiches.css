@@ -1,0 +1,65 @@
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 120px 0px 20px 0px;
+}
+
+.product-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 313px;
+    width: 232px;
+    overflow: hidden;
+}
+
+
+.product-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.product-column::before {
+    content: "";
+    position: absolute;
+    bottom: 87px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 545px solid transparent;
+    border-bottom: 42px solid white;
+}
+
+.product-details{
+    text-align: center;
+    font-family: 'Monserrat Alternates', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    line-height: 18px;
+    word-break: break-word;
+    color: #4f4f4f;
+}
+
+.product-detailes-price{
+    font-size: 20px;
+}
+
+@media (max-width: 260px){
+    .product-column{
+        height: auto;
+    }
+
+    .product-column::before {
+        display: none;
+    }
+
+    .product-img{
+        height: 170px;
+    }
+}

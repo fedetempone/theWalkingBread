@@ -10,7 +10,7 @@ import SocialMedia from '../social-media/SocialMedia';
 function Home() {
   return (
     <>  
-      <div className='hola'>
+      <div className='headerContainer'>
           <Navbar/>
             <div className='content banner-container clearfix'>
             {/* la imagen se mete aca adentro desde css */}

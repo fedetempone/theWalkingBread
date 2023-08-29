@@ -195,8 +195,8 @@ a {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 8px;
-    right: 3px;
+    bottom: 10%;
+    right: 4%;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;

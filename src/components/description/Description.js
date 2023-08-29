@@ -8,7 +8,6 @@ import { faShoppingBag } from '@fortawesome/fontawesome-free-solid';
 import { faWhatsapp } from '@fortawesome/fontawesome-free-brands';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css'; 
-import Customize from '../customize/Customize';
 import '../description/description.css';
 
 function Description() {
