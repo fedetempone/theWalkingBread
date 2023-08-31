@@ -1,6 +1,6 @@
 import Navbar from '../navbar/Navbar'
 import '../products/products.css'
-import Footer from '../footer/Footer';
+import Footer from '../footer/Footer'
 
 function Products() {
   return (

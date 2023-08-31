@@ -5,19 +5,52 @@ import Footer from "../footer/Footer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faTwitter, faFacebook, faInstagram } from '@fortawesome/fontawesome-free-brands';
 
+import firestoreInstance from 'firebaseConfig';
+
+// Importo la instancia de la base de datos que está creada en firebase firestore
+// y la estoy trayendo del archivo firebaseConfig que creé con toda la importación
+// de la base de datos. Así voy a poder interactuar con ella.
+
+import { collection, getDocs } from 'firebase/firestore';
+// Importo 2 funciones pertenecientes a la librería de firebase llamada firestore
+// son necesarias para interactuar con la base de datos.
+
 function SandwichesPage() {
-  //traigo los productos de la base de datos usando useEffect y fetch
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/products')
-      .then(response => response.json())
-      .then(data => {
-        setProducts(data);
-      })
-      .catch(error => console.error('Error fetching products:', error));
-  }, []);
+    // Obtengo los datos de la base de datos  con la funcion fetchdata
+    const fetchData = async () => {
+      const productsCollectionRef = collection(firestoreInstance, 'sandwiches');
+      // con productsCollectionRef obtengo una referencia a la coleccion de la base de datos
+      // collection recibe 2 paramettros, el primero es la instancia de la basededatos
+      // y la segunda es el nombre de la coleccion a la que quiero acceder
+      // en este caso la coleccion en la base de datos se llama products.
+      const querySnapshot = await getDocs(productsCollectionRef);
+      // con querySnapshot obtengo una snapshot(instantanea o captura de momento especifico)
+      // de los datos almacenados en la basededatos en tiempo real. 
+      const productsData = [];
+      // declaro un arreglo productsData que se utilizara para almacenar los
+      // datos obtenidos de la base de datos 
+      querySnapshot.forEach((doc) => {
+        // itero a traves de cada documento de la snapshot o instantanea (cada documento
+        // contiene el producto con su nombre descripcion precio etc.) y para 
+        // cada documento se ejecuta una funcion flecha que pushea un nuevo objeto
+        // con los datos que va a obteniendo
+        productsData.push({
+          id: doc.id,
+          data: doc.data(), // esta es la funcion que termina devolviendo un objeto con todos los campos de la base de datos
+        });
+      });
 
+      setProducts(productsData);
+      // una ves que se armo el arreglo con todos los datos, le actualizo
+      // el estado a products a traves de setProducts y ya me quedan los datos
+      // procesados y listos para mostrarlos
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <Navbar />
@@ -26,12 +59,12 @@ function SandwichesPage() {
           <div key={product.id} className="product-column">
             <div className="imgContainer">
               <a href="">
-                <img src={product.img} alt="imagen de sanguche" className="product-img" />
+                <img src={product.data.img} alt="imagen de sanguche" className="product-img" />
               </a>
             </div>
             <div className="product-details">
-              <h3>{product.name}</h3>
-              <p className='product-detailes-price'>${product.price}</p>
+              <h3>{product.data.name}</h3>
+              <p className='product-detailes-price'>${product.data.price}</p>
             </div>
           </div>
         ))}
@@ -43,9 +76,3 @@ function SandwichesPage() {
 
 export default SandwichesPage;
 
-            // <li key={product.id}>
-            //   <h2>{product.name}</h2>
-            //   <p>Precio: {product.price}</p>
-            //   <p>Descripción: {product.description}</p>
-            //   <img src={product.img} alt="" />
-            // </li>
