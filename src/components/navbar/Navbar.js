@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation} from 'react-router-dom';
 import img_logo from '../images/navlogo.png';
 import icon_cart from '../images/icon_shopping_cart.svg';
 import './navbar.css';
 import Toggle_menu from '../menu toggle/Toggle_menu';
 import { useState } from 'react';
+
 
 function Navbar() {
   const [clicked, setClicked] = useState(false);
@@ -32,35 +33,35 @@ function Navbar() {
           <ul className={`menu ${clicked ? 'active' : ''}`}>
             {!isContactPage && !isAboutUsPage && (
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" onClick={() =>setClicked(false)}>About Us</Link>
               </li>
             )}
             {!isProductsPage && !isHomePage && (
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() =>setClicked(false)}>Home</Link>
               </li>
             )}
             
             {!isProductsPage ? (
               <li>
-                <Link to="/productos">Products</Link>
+                <Link to="/productos" onClick={() =>setClicked(false)}>Products</Link>
               </li>
             ): <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={() =>setClicked(false)}>Home</Link>
               </li>}
 
             {!isContactPage && (
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" onClick={() =>setClicked(false)}>Contact</Link>
               </li>
             )}
             {isContactPage && (
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about" onClick={() =>setClicked(false)}>About Us</Link>
               </li>
             )}
             <li className="navbar-shopping-cart">
-              <Link to="/cart">
+              <Link to="/cart" onClick={() =>setClicked(false)}>
                 <img className="imgCart" src={icon_cart} alt="shopping cart" />
               </Link>
               <div>0</div>

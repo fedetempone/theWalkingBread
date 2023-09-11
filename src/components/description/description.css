@@ -84,6 +84,7 @@
     padding: 20px;
     text-align: center;
     top: -21px;
+    
   }
 
   .textShape {
@@ -123,6 +124,10 @@
   .containerDescription {
     position: relative;
     margin: 20px 0;
+  }
+
+  .containerDescription a{
+    text-decoration: none;
   }
 
   .containerImgDescription img:hover {

@@ -39,7 +39,7 @@ function Description() {
         </div>
       </div>
       <div className="containerDescription">
-        <Link to="/sandwich" className='anchorSandwiches'>
+        <Link to="/sandwiches" className='anchorSandwiches'>
           <div className="containerImgDescription">
             <img src={img_sandwich} alt="Imagen descriptiva sandwiches" />
             <div className="text-overlay">

@@ -6,24 +6,22 @@ import Footer from '../footer/Footer';
 function AboutUs() {
   return (
     <>
-        <Navbar/>
-        <div className="content">
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <h1>about us</h1>
-            <Footer/>
-        </div>
+    <div className="content">
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+        <h1>about us</h1>
+    </div>
     </>
   )
 }

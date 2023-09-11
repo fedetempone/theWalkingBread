@@ -1,5 +1,4 @@
 import cupcakes from '../images/cupcakes2.jpg'
-import Divisors from '../divisors/Divisors';
 import '../customize/customize.css'
 
 function Customize() {

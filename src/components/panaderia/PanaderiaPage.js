@@ -1,11 +1,15 @@
-import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+import ProductList from "components/productList/ProductList";
+import Divisors from "components/divisors/Divisors";
+import SocialMedia from "components/social-media/SocialMedia";
 
 function PanaderiaPage() {
   return (
     <>
-        <Navbar/>
-        <Footer/>
+       <div className="products-container">
+        <ProductList category="panaderia" />
+      </div>
+      <Divisors text="ENVIANOS UN MENSAJE"></Divisors>
+      <SocialMedia />
     </>
   )
 }

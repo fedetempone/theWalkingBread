@@ -1,0 +1,236 @@
+.ul-routes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 90px;
+    list-style: none;
+    align-items: baseline;
+    padding: 0px;
+    font-size: 12px;
+    font-family: 'Monserrat Alternates', sans-serif;
+    text-transform: uppercase;
+}
+
+.ul-routes a{
+    text-decoration: none;
+}
+
+.ul-routes li{
+    padding: 5px;
+}
+
+.li-hoverable:hover{
+    color: #fd0404;
+}
+
+.li-current{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.product-detail-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lato alternates', sans-serif;
+    padding: 15px;
+}
+
+.product-detail-info h5{
+    text-transform: uppercase;
+}
+
+.priceInfo{
+    font-size: 25px;
+}
+
+.product-detail-description{
+    font-family: 'Lato alternates', sans-serif;
+    padding: 15px;
+}
+
+.text-box{
+    border: 1px solid;
+    padding: 15px;
+    text-align: initial;
+    border-color: #eaeaea;
+    border-radius: 5px;
+}
+
+.img-product-detail{
+    object-fit: contain;
+    width: 100vw;
+    transition: transform 0.3s ease; 
+}
+
+.payment-options{
+    text-decoration: underline;
+    font-size: 15px;
+    color: #fd0404;
+}
+
+.hr-products-detail{
+    border-color: #f2dec2;
+    box-shadow: 0 1px 5px rgb(144 107 107 / 50%);
+}
+
+.button-add-to-cart{
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+    color: #fff;
+    border-radius: 4px;
+    height: 50px;
+    letter-spacing: 2px;
+    padding: 14px 20px;
+}
+
+
+
+.button-add-to-cart:hover{
+    background: black;
+    cursor: pointer;
+}
+
+.product-details-whatsapp-icon{
+    color: #fd0404;
+    height: 1.4em;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.anchor-wp-icon-product-detail{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    cursor: default;
+    pointer-events: none;
+}
+
+.anchor-wp-icon-product-detail p{
+    margin-left: 5px;
+}
+
+.product-details-whatsapp-icon:hover{
+    color: black;
+}
+
+.product-detail-social-media-icons{
+    height: 1.4em;
+    padding-right: 8px;
+    color: black;
+}
+
+.product-detail-social-media-icons:hover{
+    color: #fd0404;
+}
+
+@media (max-width: 370px){
+    .ul-routes{
+        font-size: 11px;
+    } 
+
+    .button-add-to-cart{
+        height: 38px;
+        letter-spacing: 0;
+        padding: 0;
+        font-size: 11px;
+    }
+}
+
+@media (min-width:768px){
+    .product-detail-container{
+        flex-direction: row;
+        align-items: initial;
+        overflow: hidden;
+        padding: 0;
+        max-width: 800px;
+        margin: 0px auto;
+    }
+
+    .img-product-detail{
+        width: 457px;
+        height: auto;
+    }
+
+    .product-detail-img-content{
+        margin-right: 30px;
+        width: 100vw;
+    }
+
+    .product-detail-info{
+        margin-left: 30px;
+    }
+
+    .product-detail-info h5 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .zoom-image {
+        width: 100%; 
+        height: 100%; 
+        transition: transform 0.3s ease; 
+      }
+      
+    .socialMediaContainerImport{
+        margin-top: 100px;
+    }
+    
+}
+
+@media (min-width:1200px){
+    .product-detail-container{
+        max-width: 1100px;
+    }
+
+    .product-detail-description {
+        max-width: 80%;
+        margin: 0px auto;
+        text-align: center;
+    }
+}
+
+.anchorRelatedProduct{
+    height: 500px;
+    width: 300px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.relatedProductsImgDescription{
+    width: 50%;
+}
+
+.relatedProductsName{
+    font-size: 14px !important;
+}
+
+@media (min-width: 768px){
+    .relatedProductsImgDescription{
+        width: 95%;
+    }
+
+    .relatedProductsName{
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 460px){
+    .textOverlay-relatedProducts{
+        margin: 0;
+        padding: 0;
+        top: 23px;
+    }
+
+    .relatedProductsName{
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-product-detail {
+      transform: none !important; 
+    }
+  }
