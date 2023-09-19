@@ -5,19 +5,23 @@ import icon_cart from '../images/icon_shopping_cart.svg';
 import './navbar.css';
 import Toggle_menu from '../menu toggle/Toggle_menu';
 import { useState } from 'react';
+// import { useCart } from '../cartContext/CartContext';
 
 
-function Navbar() {
+function Navbar({ cartItems }) {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(!clicked);
   };
+  // const { cartItems } = useCart();
+  const totalItemsInCart = cartItems ? Object.values(cartItems).reduce((total, quantity) => total + quantity, 0) : 0;
 
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
   const isProductsPage = location.pathname === '/productos';
   const isHomePage = location.pathname === '/';
   const isAboutUsPage = location.pathname === '/about';
+
 
   return (
     <>
@@ -64,7 +68,7 @@ function Navbar() {
               <Link to="/cart" onClick={() =>setClicked(false)}>
                 <img className="imgCart" src={icon_cart} alt="shopping cart" />
               </Link>
-              <div>0</div>
+              <div>{totalItemsInCart}</div>
             </li>
             
           </ul>

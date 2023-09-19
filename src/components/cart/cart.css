@@ -1,0 +1,42 @@
+.cart{
+    margin-top: 120px;
+}
+
+.cart h4{
+    text-align: center;
+}
+
+.cartContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    background: #e7e7e7;
+    padding: 23px;
+}
+
+.cartImg img{
+    height: 100px;
+}
+
+.cartSubtotal{
+    text-align: center;
+}
+
+.inputQuantity input{
+    width: 20%;
+}
+
+.buy{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 5px 20px 5px 0px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.buy hr{
+    width: 100vw;
+}

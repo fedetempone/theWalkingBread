@@ -1,5 +1,6 @@
 import Navbar from 'components/navbar/Navbar';
 import Footer from 'components/footer/Footer';
+import { useCart } from 'components/cartProvider/CartProvider';
 import './layout.css'
 
 
@@ -10,9 +11,10 @@ import './layout.css'
 // es decir esto lo uso para envolver y mostrar un contenido especifico 
 // pero a su vez mostrar tambien siempre el navbar y el footer .
 function Layout({ children }) {
+  const { cartItems } = useCart();
   return (
     <div>
-      <Navbar /> 
+      <Navbar cartItems={cartItems} />
       <div className="contentLayout">
         {children} 
       </div>

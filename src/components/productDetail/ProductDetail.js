@@ -1,29 +1,34 @@
-import './productDetail.css'
+
+
+
+
+
+// este codigo funciona pero carga los productos muchas veces en la consola lo tengo que modificar !!!!
+
+
+
+
+
+
+import './productDetail.css';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// obtengo la ruta con useParams
-import firestoreInstance from 'firebaseConfig'; 
-// Importo la instancia de la base de datos que está creada en firebase firestore
-// y la estoy trayendo del archivo firebaseConfig que creé con toda la importación
-// de la base de datos. Así voy a poder interactuar con ella.
+import firestoreInstance from 'firebaseConfig';
 import { collection, getDocs, where, query } from 'firebase/firestore';
-// Importo funciones pertenecientes a la librería de firebase llamada firestore
-// son necesarias para interactuar con la base de datos.
 import { Link } from 'react-router-dom';
 import ZoomImg from 'components/handleMouseLeave/ZoomImg';
-import Layout from 'components/layout/Layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Divisors from 'components/divisors/Divisors';
 import { faWhatsapp, faInstagram, faFacebook, faTwitter } from '@fortawesome/fontawesome-free-brands';
-import RelatedProducts from '../relatedProducts/RelatedProducts'
+import RelatedProducts from '../relatedProducts/RelatedProducts';
 import SocialMedia from 'components/social-media/SocialMedia';
 import LoadingFiles from 'components/loadingFiles/LoadingFiles';
+import { useCart } from 'components/cartProvider/CartProvider';
 
 function ProductDetail() {
   const { collectionName, productName } = useParams();
-  const [productDetails, setProductDetails] = useState({});
-  const [relatedProducts, setRelatedProducts] = useState([]);
   const decodedProductName = decodeURIComponent(productName);
+  const { addProductToCart } = useCart();
 
   const fetchProductDetails = async () => {
     try {
@@ -31,23 +36,22 @@ function ProductDetail() {
       const productQuery = query(currentCollectionRef, where('name', '==', decodedProductName));
       const productSnapshot = await getDocs(productQuery);
 
-      // Compruebo si se encontro el producto actual
       if (!productSnapshot.empty) {
         const productDoc = productSnapshot.docs[0];
         const productData = productDoc.data();
+
+        localStorage.setItem(`productDetails-${decodedProductName}`, JSON.stringify(productData));
+        console.log('Detalles del producto guardados en localStorage:', productData);
         setProductDetails(productData);
 
-        // creo la consulta para obtener los productos relacionados
         const relatedProductsQuery = query(currentCollectionRef, where('name', '!=', decodedProductName));
         const relatedProductsSnapshot = await getDocs(relatedProductsQuery);
 
-        // creo un array de objetos a partir de los documentos en el snapshot (relatedProductsSnapshot)
         const relatedProductsData = relatedProductsSnapshot.docs.map(doc => ({
           id: doc.id,
           data: doc.data(),
         }));
 
-        // actualizo el estado con los productos relacionados que quiero mostrar
         setRelatedProducts(relatedProductsData);
       } else {
         console.error('Producto no encontrado:', decodedProductName);
@@ -57,13 +61,28 @@ function ProductDetail() {
     }
   };
 
+  const [productQuantities, setProductQuantities] = useState({});
+  const [productDetails, setProductDetails] = useState({});
+  const [relatedProducts, setRelatedProducts] = useState([]);
+
   useEffect(() => {
-    // obtengo los detalles del producto y los productos relacionados llamando a la funcion
-    fetchProductDetails();
+    const cachedProductDetails = localStorage.getItem(`productDetails-${decodedProductName}`);
+    console.log('Detalles del producto recuperados desde localStorage:', cachedProductDetails);
+    if (cachedProductDetails) {
+      setProductDetails(JSON.parse(cachedProductDetails));
+    } else {
+      fetchProductDetails();
+    }
   }, [collectionName, decodedProductName]);
 
+  const handleAddToCart = (product) => {
+    addProductToCart(product);
+    const updatedQuantities = { ...productQuantities };
+    updatedQuantities[product.id] = (updatedQuantities[product.id] || 0) + 1;
+    setProductQuantities(updatedQuantities);
+  };
+
   return (
-    <Layout>
       <LoadingFiles promise={fetchProductDetails}>
         <>
           <ul className='ul-routes'>
@@ -80,7 +99,7 @@ function ProductDetail() {
           <div className="product-detail-container">
             <div className="product-detail-img-content">
               <a href="">
-                <ZoomImg src={productDetails.img} propName="fotito"></ZoomImg>
+                <ZoomImg src={productDetails.img} propName="zoomimg"></ZoomImg>
               </a>
             </div>
             <div className="product-detail-info">
@@ -88,7 +107,9 @@ function ProductDetail() {
               <p className='priceInfo'>${productDetails.price}</p>
               <a className='payment-options' href="">Ver medios de pago</a>
               <hr className='hr-products-detail' />
-              <input type="submit" className='button-add-to-cart' value="AGREGAR AL CARRITO" />
+              <button className='button-add-to-cart' onClick={() => handleAddToCart(productDetails)}>AÑADIR AL CARRITO</button>
+              <Link to="/cart"><button className='button-see-cart'>VER CARRITO</button></Link>
+              {/* <input type="submit" className='button-add-to-cart' value="AGREGAR AL CARRITO" /> */}
               <br />
               <a href="" className='anchor-wp-icon-product-detail'>
                 <FontAwesomeIcon icon={faWhatsapp} className="product-details-whatsapp-icon" /> <p>Consulta stock antes de pedir !</p>
@@ -110,8 +131,8 @@ function ProductDetail() {
           </div>
         </>
       </LoadingFiles>
-    </Layout>
   );
 }
 
 export default ProductDetail;
+

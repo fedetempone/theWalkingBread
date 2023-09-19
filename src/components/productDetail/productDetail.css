@@ -85,6 +85,17 @@
     padding: 14px 20px;
 }
 
+.button-see-cart{
+    width: 100%;
+    background: #ff0000a3;
+    color: #fff;
+    border-radius: 4px;
+    height: 50px;
+    letter-spacing: 2px;
+    padding: 14px 20px;
+    margin-top: 20px;
+}
+
 
 
 .button-add-to-cart:hover{
@@ -176,6 +187,16 @@
       
     .socialMediaContainerImport{
         margin-top: 100px;
+    }
+
+    .payment-options:hover{
+        color: blue;
+    }
+
+    .button-see-cart:hover{
+        cursor: pointer;
+        background: #fff;
+        color: #ff0000a3;
     }
     
 }
