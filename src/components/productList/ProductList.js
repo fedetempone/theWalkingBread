@@ -57,6 +57,13 @@ function ProductList() {
   // useEffect detecte un cambio en el parametro de la ruta.
 
   useEffect(() => {
+    const localStorageKey = `products-${collectionName}`;
+    const storedProducts = localStorage.getItem(localStorageKey);
+    if (storedProducts) {
+      console.log('Obteniendo productos de localStorage');
+      setProducts(JSON.parse(storedProducts));
+      setLoading(false);
+    } else {
     fetchProductsFromCollection(collectionName, setLoading)
       // ejecuto la funcion que me trae los datos y le paso como parametro la ruta de la url y el setloading
       .then((collectionProducts) => {
@@ -66,15 +73,12 @@ function ProductList() {
         setLoading(false);
         // por ultimo como quedo todo funcionando establezco el loading en false para que muestre los productos y
         // deje de mostrar el circulito de carga...
+        localStorage.setItem(localStorageKey, JSON.stringify(collectionProducts));
       });
+    }
   }, [collectionName]);
 
-  // basicamente estoy utilizando useEffect para obtener todos los productos de la coleccion especificada
-  // por collectionName (que va a depender de la ruta), y actualizo el estado de products y loading
-  // cada vez que collectionName cambie. por ejemplo si estoy en la ruta /sandwiches obtengo todos los 
-  // productos de esa coleccion hago todo el proceso de destructuracion y actualizo el estado de products 
-  // mostrando todos los productos, si la ruta cambia a /pasteleria, se va a buscar los datos de pasteleria
-  // y asi sucesivamente..
+
 
   return (
     <LoadingFiles promise={() => fetchProductsFromCollection(collectionName, setLoading)}>

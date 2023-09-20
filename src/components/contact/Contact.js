@@ -15,7 +15,7 @@ function Contact() {
         </div>
 
         <form action="">
-            <input type="text" id="FormControlInput1" name="name" placeholder="Tu Nombre" className="field" autoComplete="username" required />
+            <input type="text" id="FormControlInput1" name="username" placeholder="Tu Nombre" className="field" autoComplete="username" required />
             <input type="email" id="FormControlInput2" name="email" placeholder="Tu Email" className="field" autoComplete="on" required/>
             <textarea id="FormControlTextarea1" name="mensaje" placeholder="Tu Mensaje..." required></textarea>
             <input type="submit" name="send" value="Enviar Mensaje" className="send-button"/>
