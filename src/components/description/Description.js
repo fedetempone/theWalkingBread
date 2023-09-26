@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import img_panaderia from '../images/panaderia.jpg';
-import img_pasteleria from '../images/pasteleria.jpg';
-import img_sandwich from '../images/sandwich.jpg';
+import img_panaderia from '../../images/panaderia.jpg';
+import img_pasteleria from '../../images/pasteleria.jpg';
+import img_sandwich from '../../images/sandwich.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/fontawesome-free-solid';
 import { faWhatsapp } from '@fortawesome/fontawesome-free-brands';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
-import '@fortawesome/fontawesome-free/css/all.css'; 
+import '@fortawesome/fontawesome-free/css/all.css';
 import '../description/description.css';
 
 function Description() {
@@ -16,7 +16,7 @@ function Description() {
       <div className="containerServices">
         <div className="services services-border">
           <div className='servicesDescription'>
-            <FontAwesomeIcon icon={faWhatsapp} /> 
+            <FontAwesomeIcon icon={faWhatsapp} />
             <span style={{ marginLeft: '10px' }}>HACE TU PEDIDO</span>
             <div className="servicesLine"></div>
           </div>

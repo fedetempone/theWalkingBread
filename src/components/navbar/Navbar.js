@@ -1,20 +1,17 @@
 import React from 'react';
 import { Link, useLocation} from 'react-router-dom';
-import img_logo from '../images/navlogo.png';
-import icon_cart from '../images/icon_shopping_cart.svg';
+import img_logo from '../../images/navlogo.png';
+import icon_cart from '../../images/icon_shopping_cart.svg';
 import './navbar.css';
 import Toggle_menu from '../menu toggle/Toggle_menu';
 import { useState } from 'react';
-// import { useCart } from '../cartContext/CartContext';
 
 
-function Navbar({ cartItems }) {
+function Navbar() {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     setClicked(!clicked);
   };
-  // const { cartItems } = useCart();
-  const totalItemsInCart = cartItems ? Object.values(cartItems).reduce((total, quantity) => total + quantity, 0) : 0;
 
   const location = useLocation();
   const isContactPage = location.pathname === '/contact';
@@ -68,7 +65,7 @@ function Navbar({ cartItems }) {
               <Link to="/cart" onClick={() =>setClicked(false)}>
                 <img className="imgCart" src={icon_cart} alt="shopping cart" />
               </Link>
-              <div>{totalItemsInCart}</div>
+              {/* <div>{cartItemCount}</div> */}
             </li>
             
           </ul>

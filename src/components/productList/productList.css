@@ -3,7 +3,7 @@
     padding: 20px;
 }
 
-.product-list{
+.product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -40,7 +40,7 @@
     border-bottom: 42px solid #f7f7f7;
 }
 
-.product-details{
+.product-details {
     text-align: center;
     font-family: 'Monserrat Alternates', sans-serif;
     text-transform: uppercase;
@@ -51,12 +51,12 @@
     color: #4f4f4f;
 }
 
-.product-detailes-price{
+.product-detailes-price {
     font-size: 20px;
 }
 
-@media (max-width: 260px){
-    .product-column{
+@media (max-width: 260px) {
+    .product-column {
         height: auto;
     }
 
@@ -64,7 +64,7 @@
         display: none;
     }
 
-    .product-img{
+    .product-img {
         height: 170px;
     }
 }

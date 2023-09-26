@@ -64,20 +64,19 @@ function ProductList() {
       setProducts(JSON.parse(storedProducts));
       setLoading(false);
     } else {
-    fetchProductsFromCollection(collectionName, setLoading)
-      // ejecuto la funcion que me trae los datos y le paso como parametro la ruta de la url y el setloading
-      .then((collectionProducts) => {
-        // si la promesa se resuelve con exito le paso los productos que arme en el array collectionproducts
-        setProducts(collectionProducts);
-        // y actualizo setProducts con el nuevo array que cree con todos los datos de la base de datos ya cargados.
-        setLoading(false);
-        // por ultimo como quedo todo funcionando establezco el loading en false para que muestre los productos y
-        // deje de mostrar el circulito de carga...
-        localStorage.setItem(localStorageKey, JSON.stringify(collectionProducts));
-      });
+      fetchProductsFromCollection(collectionName, setLoading)
+        // ejecuto la funcion que me trae los datos y le paso como parametro la ruta de la url y el setloading
+        .then((collectionProducts) => {
+          // si la promesa se resuelve con exito le paso los productos que arme en el array collectionproducts
+          setProducts(collectionProducts);
+          // y actualizo setProducts con el nuevo array que cree con todos los datos de la base de datos ya cargados.
+          setLoading(false);
+          // por ultimo como quedo todo funcionando establezco el loading en false para que muestre los productos y
+          // deje de mostrar el circulito de carga...
+          localStorage.setItem(localStorageKey, JSON.stringify(collectionProducts));
+        });
     }
   }, [collectionName]);
-
 
 
   return (
@@ -87,10 +86,12 @@ function ProductList() {
       ) : (
         <div className="products-container">
           <div className="product-list">
+
             {products.map((product) => (
               <div key={product.id} className="product-column">
                 <div className="imgContainer">
-                  <Link to={`/productos/${collectionName}/${product.name}`}>
+
+                  <Link to={`/productos/${collectionName}/${product.name}`} state={{ product }}>
                     <img src={product.img} alt="imagen de producto" className="product-img" />
                   </Link>
                 </div>

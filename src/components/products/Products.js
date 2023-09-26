@@ -6,9 +6,9 @@ import firestoreInstance from 'firebaseConfig';
 import { Link } from 'react-router-dom';
 
 function Products() {
-  const [sortingOption, setSortingOption] = useState('-'); // Opción predeterminada
+  const [sortingOption, setSortingOption] = useState('-');
   const [products, setProducts] = useState([]);
-  const [sortedProducts, setSortedProducts] = useState([]); // Nuevo estado para productos ordenados
+  const [sortedProducts, setSortedProducts] = useState([]);
   const [collections, setCollections] = useState([]);
 
   useEffect(() => {
@@ -50,23 +50,22 @@ function Products() {
       };
 
       fetchProductsFromCollections().then((allProducts) => {
-        // Convierte los precios de string a números
+        // convierto los precios de string a numeros por las dudas
         const productsWithNumericPrice = allProducts.map((product) => ({
           ...product,
-          price: parseFloat(product.price), // Si los precios son números de punto flotante
-          // O usa parseInt(product.price, 10) si son números enteros
+          price: parseFloat(product.price),
         }));
 
         setProducts(productsWithNumericPrice);
-        setSortedProducts(productsWithNumericPrice); // Inicialmente, los productos ordenados son iguales a los productos cargados
-        // Guarda los productos en localStorage para cachearlos
+        setSortedProducts(productsWithNumericPrice); // inicialmente los productos ordenados van a ser iguales a los productos cargados
+        // guardo los productos en localstorage para despues cachearlos 
         localStorage.setItem('cachedProducts', JSON.stringify(productsWithNumericPrice));
       });
     });
   }, []);
 
   useEffect(() => {
-    // Función para ordenar los productos según la opción seleccionada
+    // con esta funcion ordeno los productos segun la opcion seleccionada por el usuario digamos
     const sortProducts = () => {
       switch (sortingOption) {
         case 'price-ascending':
@@ -78,7 +77,7 @@ function Products() {
         case 'alpha-descending':
           return [...sortedProducts].sort((a, b) => b.name.localeCompare(a.name));
         default:
-          return [...sortedProducts]; // Orden predeterminado o ninguna opción seleccionada
+          return [...sortedProducts];
       }
     };
 

@@ -1,37 +1,41 @@
-.whatsappMessage{
+.whatsappMessage {
     text-align: center;
     margin: 20px;
 }
 
-.whatsappMessage p{
+.whatsappMessage p {
     font-family: "Lato";
 }
 
 .iconWhatsappSocialMedia {
     height: 4.2em;
-    vertical-align: -0.125em ;
-    color: #fd0404 ;
+    vertical-align: -0.125em;
+    color: #fd0404;
 }
 
-.socialMediaIcons{
+.socialMediaIcons {
     text-align: center;
     margin: 25px;
 }
 
-.iconFacebookSocialMedia, .iconInstagramSocialMedia ,.iconTwitterSocialMedia{
+.iconFacebookSocialMedia,
+.iconInstagramSocialMedia,
+.iconTwitterSocialMedia {
     height: 3em;
-    vertical-align: -0.125em ;
-    color: black ;
+    vertical-align: -0.125em;
+    color: black;
     margin: 5px;
 }
 
-@media (min-width: 768px){
-    .iconTwitterSocialMedia:hover{
+@media (min-width: 768px) {
+    .iconTwitterSocialMedia:hover {
         color: #66afe9;
     }
-    .iconFacebookSocialMedia:hover{
+
+    .iconFacebookSocialMedia:hover {
         color: blue;
-    } 
+    }
+
     .iconInstagramSocialMedia:hover {
         color: #ac5184;
     }

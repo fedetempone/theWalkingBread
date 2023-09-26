@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import firestoreInstance from 'firebaseConfig';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 
-function ProductDetail() {
+function RelatedProducts() {
   const { collectionName, productName } = useParams();
   const [productDetails, setProductDetails] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
@@ -62,4 +63,6 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail;
+export default RelatedProducts;
+
+

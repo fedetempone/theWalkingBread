@@ -1,0 +1,75 @@
+  .containerScrollEffect {
+      position: relative;
+      height: 1000px;
+      overflow: hidden;
+  }
+
+  .background-image {
+      background-image: url('../../images/chef.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 400px;
+      transition: transform 3s, height 3s;
+      transform-origin: top center;
+      opacity: .5;
+  }
+
+  .scrolled .background-image {
+      height: 100%;
+      transform: scale(1);
+  }
+
+  .video {
+      position: absolute;
+      top: 22%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+  }
+
+  .video iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+  }
+
+  .video h2 {
+      font-size: 23px;
+  }
+
+  @media (max-width: 768px) {
+      .containerScrollEffect {
+          height: 600px;
+      }
+
+      .video iframe {
+          max-width: 472px;
+          height: 264px;
+      }
+
+      .FinalTextAbout {
+          margin-bottom: 30px;
+      }
+  }
+
+  @media (max-width: 500px) {
+      .video h2 {
+          font-size: 10px;
+      }
+
+      .video iframe {
+          max-width: 191px;
+          height: 107px;
+      }
+
+      .containerScrollEffect {
+          height: 205px;
+      }
+
+      .video {
+          top: 14%;
+      }
+  }

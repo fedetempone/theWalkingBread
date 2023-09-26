@@ -1,0 +1,239 @@
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #333;
+}
+
+.underline {
+  width: 195px;
+  height: 2px;
+  background: linear-gradient(to right, #ff5733, #fddb8e, #41a9f2);
+  margin: 10px auto;
+}
+
+.panaderiaContent {
+  display: flex;
+  align-items: initial;
+  justify-content: center;
+  padding: 20px;
+}
+
+.text {
+  max-width: 50%;
+  padding: 20px;
+  margin-top: -41px;
+}
+
+.image {
+  max-width: 50%;
+}
+
+.image img {
+  width: 100%;
+}
+
+.titleAbout {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.descriptionAbout {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.zombieTextCorrection {
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'dead_kansasregular';
+}
+
+.enjoyAbout {
+  font-weight: bold;
+}
+
+.FinalTextAbout {
+  text-align: center;
+  max-width: 700px;
+  background: #d5d5d5;
+  padding: 40px;
+}
+
+/* MEDIA STYLES */
+
+.FirstResponsiveContainerAbout {
+  display: flex;
+}
+
+.SecondResponsiveContainerAbout {
+  display: flex;
+}
+
+.mediaAboutContent {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.mediaAboutDescription {
+  display: flex;
+  align-items: initial;
+  border-right: 1.6px solid;
+  padding: 10px;
+  border-image: linear-gradient(to bottom, #ff5733, #fddb8e, #41a9f2);
+  border-image-slice: 1;
+}
+
+.borderHide {
+  border-right: none !important;
+}
+
+.iconMedia {
+  display: flex;
+  justify-content: center;
+  align-items: initial;
+  padding: 14px 9px 0px 5px;
+}
+
+.iconMedia svg {
+  color: #fd0404;
+}
+
+.textMediaAboutDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  text-align: center;
+  font-size: 11px;
+}
+
+.textMediaAboutDescription h3 {
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.textMediaAboutDescription p {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.hrCustom {
+  width: 80%;
+  background-color: #afadad63;
+  height: 2px;
+  border: none;
+}
+
+.aboutFinalContentSocialMedia {
+  text-align: center;
+  padding: 20px;
+}
+
+.aboutFinalContentSocialMedia svg {
+  border: 1px solid;
+  padding: 5px;
+  border-color: black;
+  background: white;
+}
+
+.noneStyle {
+  text-decoration: none;
+  color: inherit;
+  margin: 10px;
+}
+
+.noneStyle svg:hover {
+  background-color: black;
+  color: white;
+}
+
+.finalContentImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finalContentImg img {
+  height: 150px;
+  margin-right: 10px;
+}
+
+.finalContentImg h3 {
+  font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  .panaderiaContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .text {
+    text-align: center;
+    margin: 20px;
+  }
+
+
+  .image {
+    max-width: 100%;
+  }
+
+  .FirstResponsiveContainerAbout {
+    flex-direction: column;
+  }
+
+  .SecondResponsiveContainerAbout {
+    flex-direction: column;
+  }
+
+  .responsiveHideBorder {
+    border-right: none !important;
+  }
+
+  .mediaAboutDescription {
+    margin-top: 15px;
+  }
+
+  .mediaContainer {
+    margin-top: 55px;
+  }
+
+  .hrCustom {
+    margin-top: 50px;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .mediaAboutContent {
+    height: auto;
+  }
+
+  .mediaContainer {
+    flex-direction: column;
+  }
+
+  .mediaAboutDescription {
+    border: none;
+  }
+
+  .textMediaAboutDescription {
+    text-align: initial;
+  }
+}

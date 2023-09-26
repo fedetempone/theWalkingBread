@@ -1,15 +1,29 @@
-.cart{
+.cart {
     margin-top: 120px;
 }
 
-.cart h4{
-    text-align: center;
+.hideEmptyCart {
+    display: none;
 }
 
-.cartContainer{
+.emptyCart {
+    display: block;
+}
+
+.cartItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.cart h4 {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartContainer {
     margin: 20px;
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
@@ -17,19 +31,19 @@
     padding: 23px;
 }
 
-.cartImg img{
+.cartImg img {
     height: 100px;
 }
 
-.cartSubtotal{
+.cartSubtotal {
     text-align: center;
 }
 
-.inputQuantity input{
+.inputQuantity input {
     width: 20%;
 }
 
-.buy{
+.buy {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -37,6 +51,6 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.buy hr{
+.buy hr {
     width: 100vw;
 }

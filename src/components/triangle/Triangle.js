@@ -4,9 +4,9 @@ import React from 'react'
 function Triangle() {
   return (
     <>
-          <div className="containerTriangle">
-              <div className="triangle"></div>
-          </div>
+      <div className="containerTriangle">
+        <div className="triangle"></div>
+      </div>
     </>
   )
 }

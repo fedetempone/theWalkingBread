@@ -41,7 +41,7 @@
   .margin-button {
     margin-top: 25px;
   }
-  
+
 
   .servicesDescription {
     display: flex;
@@ -84,7 +84,7 @@
     padding: 20px;
     text-align: center;
     top: -21px;
-    
+
   }
 
   .textShape {
@@ -126,7 +126,7 @@
     margin: 20px 0;
   }
 
-  .containerDescription a{
+  .containerDescription a {
     text-decoration: none;
   }
 
@@ -222,11 +222,11 @@
       display: block;
     }
 
-    .services{
+    .services {
       width: 350px;
       margin: 20px;
     }
-    
+
     .services-border .servicesDescription::before {
       content: "";
       position: absolute;
@@ -240,12 +240,12 @@
 
   }
 
-  @media (max-width: 274px){
+  @media (max-width: 274px) {
     .containerImgDescription p {
       font-size: 14px;
     }
 
-    .text-overlay{
+    .text-overlay {
       margin: 0;
       padding: 0;
       top: 16px;

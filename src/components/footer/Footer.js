@@ -1,5 +1,5 @@
 import './footer.css'
-import img_logo from '../images/navlogo.png'
+import img_logo from '../../images/navlogo.png'
 
 function Footer() {
   return (
@@ -18,7 +18,7 @@ function Footer() {
                 <img src={img_logo} alt=""/>
             </div>
         </nav>
-        <p>All Rights reserved 2023 - Joaco Rivas and Federico Tempone &copy;</p>
+        <p>All Rights reserved 2023 - Federico Tempone &copy;</p>
     </footer>
     </>
   )
