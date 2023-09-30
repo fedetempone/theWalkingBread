@@ -49,6 +49,7 @@
 
 .descriptionAbout {
   font-family: 'Montserrat Alternates', sans-serif;
+  word-wrap: break-word;
 }
 
 .zombieTextCorrection {
@@ -235,5 +236,22 @@
 
   .textMediaAboutDescription {
     text-align: initial;
+    word-break: break-word;
+  }
+
+  .finalContentImg{
+    flex-direction: column;
+  }
+
+  .noneStyle{
+    margin: 1px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .underline {
+    width: 60px;
   }
 }

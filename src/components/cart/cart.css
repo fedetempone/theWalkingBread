@@ -54,3 +54,52 @@
 .buy hr {
     width: 100vw;
 }
+
+.confirmationMessage {
+    display: none;
+    flex-direction: column;
+    word-wrap: break-word;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: black;
+    color: white;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 20%;
+    height: 60%;
+    width: 60%;
+    z-index: 999;
+    text-align: center;
+    opacity: 0.9;
+  }
+  
+  /* Estilo para el mensaje de carrito vacío */
+  .emptyCartMessage {
+    display: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-transform: uppercase;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+  
+  /* Estilo para mostrar los mensajes */
+  .confirmationMessage.show,
+  .emptyCartMessage.show {
+    display: flex;
+    animation: fadeInOut 9s ease; /* Agregar una animación de entrada/salida si lo deseas */
+  }
+  
+  /* Animación de entrada/salida */
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+  }

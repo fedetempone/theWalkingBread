@@ -35,7 +35,7 @@ function App() {
   function removeProductFromCart(productId) {
     // Filtra los productos en el carrito para eliminar el que coincide con el productId
     const updatedCartItems = cartItems.filter((product) => product.id !== productId);
-    
+
     // Actualiza el estado con el nuevo array de cartItems sin el producto eliminado
     setCartItems(updatedCartItems);
     setIsCartEmpty(updatedCartItems.length === 0);
@@ -44,10 +44,10 @@ function App() {
   function handleQuantityChange(productId, newQuantity) {
     // Copia el array de cartItems para no mutar el estado directamente
     const updatedCartItems = [...cartItems];
-  
+
     // Busca el producto en el carrito por su ID
     const productIndex = updatedCartItems.findIndex((product) => product.id === productId);
-  
+
     // Si se encuentra el producto en el carrito, actualiza su cantidad
     if (productIndex !== -1) {
       updatedCartItems[productIndex].quantity = newQuantity;

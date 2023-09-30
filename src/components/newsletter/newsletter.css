@@ -32,3 +32,19 @@
     border-color: #66afe9;
     outline: 0;
 }
+
+.thankYouMessage{
+    border: 1px solid red;
+    padding: 20px;
+    margin: 20px;
+}
+
+.error{
+    color: red;
+    padding: 10px;
+    display: flex;
+    margin-left: 30px;
+    text-align: initial;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-size: 15px;
+}
