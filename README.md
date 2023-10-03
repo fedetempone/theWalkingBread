@@ -9,7 +9,7 @@ Este proyecto está desarrollado con las siguientes tecnologías y herramientas 
 - ![html-logo](https://img.icons8.com/color/25/000000/html-5--v1.png) HTML5
 - ![css-logo](https://img.icons8.com/color/25/000000/css3.png) CSS3
 - ![js-logo](https://img.icons8.com/color/25/000000/javascript--v1.png) JavaScript
-- ![js-logo](https://icons8.com/icon/NfbyHexzVEDk/react) React
+- ![js-logo](https://img.icons8.com//color/25/000000/react.png) React
 - ![git-logo](https://img.icons8.com/color/25/000000/git.png) Control de versiones con GIT
 
 
