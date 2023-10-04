@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/theWalkingBread/static/css/main.ce3bcfc2.css",
-    "main.js": "/theWalkingBread/static/js/main.51363018.js",
+    "main.css": "/theWalkingBread/static/css/main.b3c84963.css",
+    "main.js": "/theWalkingBread/static/js/main.7e17be57.js",
     "static/media/panaderia.jpg": "/theWalkingBread/static/media/panaderia.ab13cf36a359bd3db63d.jpg",
     "static/media/bakery.mp4": "/theWalkingBread/static/media/bakery.f9ece14fcd71a4f160fd.mp4",
     "static/media/medialunas.jpg": "/theWalkingBread/static/media/medialunas.11def0749d0a1894a618.jpg",
@@ -11,7 +11,6 @@
     "static/media/fa-solid-900.ttf": "/theWalkingBread/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
     "static/media/bannerZombie1re-size.png": "/theWalkingBread/static/media/bannerZombie1re-size.093d9dc3a46778ce1683.png",
     "static/media/cupcakes2.jpg": "/theWalkingBread/static/media/cupcakes2.9d7c0d1413cf929589b4.jpg",
-    "static/media/navlogo.png": "/theWalkingBread/static/media/navlogo.3adf37facd7bbd45059d.png",
     "static/media/fa-brands-400.ttf": "/theWalkingBread/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
     "static/media/fa-solid-900.woff2": "/theWalkingBread/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
     "static/media/dead_kansas.woff": "/theWalkingBread/static/media/dead_kansas.354675bdd9aa90d8999b.woff",
@@ -19,16 +18,17 @@
     "static/media/dead_kansas.woff2": "/theWalkingBread/static/media/dead_kansas.6a385d31ea46f8a08e3c.woff2",
     "static/media/fa-regular-400.ttf": "/theWalkingBread/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
     "static/media/donaazombiee.jpg": "/theWalkingBread/static/media/donaazombiee.af9824dea0eea7aceb18.jpg",
+    "static/media/donaazombiee-black.jpg": "/theWalkingBread/static/media/donaazombiee-black.d2cac8083e2e700aab26.jpg",
     "static/media/fa-regular-400.woff2": "/theWalkingBread/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
     "static/media/fa-v4compatibility.ttf": "/theWalkingBread/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
     "static/media/fa-v4compatibility.woff2": "/theWalkingBread/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "static/media/icon_shopping_cart.svg": "/theWalkingBread/static/media/icon_shopping_cart.995748b73b8792b4b60fd1ed0515faaa.svg",
     "index.html": "/theWalkingBread/index.html",
-    "main.ce3bcfc2.css.map": "/theWalkingBread/static/css/main.ce3bcfc2.css.map",
-    "main.51363018.js.map": "/theWalkingBread/static/js/main.51363018.js.map"
+    "main.b3c84963.css.map": "/theWalkingBread/static/css/main.b3c84963.css.map",
+    "main.7e17be57.js.map": "/theWalkingBread/static/js/main.7e17be57.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce3bcfc2.css",
-    "static/js/main.51363018.js"
+    "static/css/main.b3c84963.css",
+    "static/js/main.7e17be57.js"
   ]
 }
