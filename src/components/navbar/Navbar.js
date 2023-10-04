@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation} from 'react-router-dom';
-import img_logo from '../../images/navlogo.png';
+import img_logo from '../../images/donaazombiee-black.jpg';
 import icon_cart from '../../images/icon_shopping_cart.svg';
 import './navbar.css';
 import Toggle_menu from '../menu toggle/Toggle_menu';

@@ -228,6 +228,18 @@
     font-size: 14px !important;
 }
 
+.added-to-cart-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fd0404;
+    padding: 50px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 768px) {
     .relatedProductsImgDescription {
         width: 95%;

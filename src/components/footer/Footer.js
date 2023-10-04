@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import img_logo from '../../images/navlogo.png';
+import img_logo from '../../images/donaazombiee-black.jpg';
 import './footer.css';
 
 function Footer() {
