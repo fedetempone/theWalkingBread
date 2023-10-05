@@ -124,6 +124,9 @@ form {
     text-align: center;
 }
 
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
 
 @media (min-width: 750px) {
     #container-form {

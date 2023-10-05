@@ -1,0 +1,80 @@
+/* Slider Wrapper */
+.slider-wrapper {
+    margin-top: 95px;
+    position: relative;
+  }
+  
+  /* Slide Indicator Dots */
+  .slide-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slide-indicator .dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #888; /* Color de los puntos inactivos */
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slide-indicator .dot.active {
+    background-color: #333; /* Color del punto activo */
+  }
+  
+  .carousel .control-dots .dot {
+    margin: -3px 6px !important; 
+  }
+
+  .slide-item {
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Agrega una sombra a las imágenes */
+  }
+  
+  .text-overlay-banner {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    width: 90vw;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
+
+  .text-overlay-banner p{
+    opacity: 0.9;
+    text-shadow: 7px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (min-width: 768px) {
+    .slide-item img {
+      max-height: 600px; /* Puedes ajustar este valor según tus necesidades */
+    }
+
+    .text-overlay-banner {
+      font-size: 3rem;
+      line-height: 60px;
+    }
+
+    .text-overlay-banner p{
+      width: 90vw;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .text-overlay-banner p {
+      display: none
+    }
+  }

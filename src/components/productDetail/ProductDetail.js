@@ -5,8 +5,9 @@ import firestoreInstance from 'firebaseConfig';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import ZoomImg from 'components/handleMouseLeave/ZoomImg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Divisors from 'components/divisors/Divisors';
-import { faWhatsapp, faInstagram, faFacebook, faTwitter } from '@fortawesome/fontawesome-free-brands';
+import { faWhatsapp, faInstagram, faFacebook, faTwitter ,faCcVisa, faCcMastercard, faCcAmex} from '@fortawesome/fontawesome-free-brands';
 import RelatedProducts from '../relatedProducts/RelatedProducts';
 import SocialMedia from 'components/social-media/SocialMedia';
 
@@ -59,6 +60,8 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
   const [productDetails, setProductDetails] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [showPayment, setShowPayment] = useState(false);
+
 
   useEffect(() => {
     const cachedProductDetails = localStorage.getItem(
@@ -71,9 +74,9 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
       fetchProductDetails();
     }
   }, [collectionName, decodedProductName]);
-
+  
   const handleAddToCart = () => {
-    // Agrego el producto al carrito pasando un objeto que lo representa
+    // agrego el producto al carrito pasandole un objeto que lo representa
     addProductToCart({
       id: productDetails.id,
       name: productDetails.name,
@@ -84,15 +87,24 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
 
     // incremento la cantidad en el estado local
     setProductQuantities(productQuantities + 1);
-    // despues de agregar un producto, me fijo si el carrito está vacío
+    // despues de agregar un producto, me fijo si el carrito esta vacio
     setIsCartEmpty(false);
-    // Establece addedToCart en true para mostrar el mensaje
+    // addedtocart en true para mostrar el cartel con el msje
     setAddedToCart(true);
-
-    // Después de un tiempo, establece addedToCart en false para ocultar el mensaje
+    // despues de 2 segundos deja de mostrar el cartel
     setTimeout(() => {
       setAddedToCart(false);
-    }, 2000); // Cambia el valor a tu preferencia
+    }, 2000);
+  };
+
+  const togglePayment = (e) => {
+    e.preventDefault();
+    setShowPayment(!showPayment);
+    if (!showPayment) {
+      setTimeout(() => {
+        setShowPayment(false);
+      }, 4000);
+    }
   };
 
   return (
@@ -117,9 +129,23 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
         <div className='product-detail-info'>
           <h5>{productDetails.name}</h5>
           <p className='priceInfo'>${productDetails.price}</p>
-          <a className='payment-options' href=''>
-            Ver medios de pago
-          </a>
+          <a className='payment-options' href='#' onClick={togglePayment}>
+        {showPayment ? 'Ocultar Medios de Pago' : 'Ver Medios de Pago'}
+      </a>
+        {showPayment && (
+          <div className="payment-container">
+            <h2>Medios de Pago</h2>
+            <div className="payment-icons">
+              <FontAwesomeIcon icon={faCcVisa} />
+              <FontAwesomeIcon icon={faCcMastercard} />
+              <FontAwesomeIcon icon={faCcAmex} />
+            </div>
+            <div className="payment-options">
+              <p>1 cuota sin interés</p>
+              <p>Otros Bancos: 3 cuotas con interés</p>
+            </div>
+          </div>
+        )}
           <hr className='hr-products-detail' />
           <button className='button-add-to-cart' onClick={handleAddToCart}>
             AÑADIR AL CARRITO
@@ -133,11 +159,11 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
             <button className='button-see-cart'>VER CARRITO</button>
           </Link>
           <br />
-          <a href='' className='anchor-wp-icon-product-detail'>
+          <a href="https://wa.me/1130607355?text=Me%20gustaría%20hacerte%20un%20pedido%20" className='anchor-wp-icon-product-detail'>
             <FontAwesomeIcon
               icon={faWhatsapp}
               className='product-details-whatsapp-icon'
-            />{' '}
+            />
             <p>Consulta stock antes de pedir !</p>
           </a>
           <p className='text-box'>
@@ -146,19 +172,19 @@ function ProductDetail({ addProductToCart, setIsCartEmpty }) {
             anticipación.
           </p>
           <p>COMPARTIR:</p>
-          <a href=''>
+          <a href='https://instagram.com'>
             <FontAwesomeIcon
               className='product-detail-social-media-icons'
               icon={faInstagram}
             />
           </a>
-          <a href=''>
+          <a href='https://facebook.com'>
             <FontAwesomeIcon
               className='product-detail-social-media-icons'
               icon={faFacebook}
             />
           </a>
-          <a href=''>
+          <a href='https://twitter.com'>
             <FontAwesomeIcon
               className='product-detail-social-media-icons'
               icon={faTwitter}

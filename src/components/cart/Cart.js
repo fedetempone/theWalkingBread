@@ -22,7 +22,7 @@ function Cart({ cartItems, handleQuantityChange, removeProductFromCart, isCartEm
       // Puedes agregar un temporizador para ocultar automáticamente el mensaje después de cierto tiempo si lo deseas
       setTimeout(() => {
         setShowConfirmation(false);
-      }, 498495195195); // Ocultar el mensaje después de 5 segundos (ajusta este valor según tus necesidades)
+      }, 5000); // Ocultar el mensaje después de 5 segundos (ajusta este valor según tus necesidades)
     }
   };
 

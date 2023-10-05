@@ -6,46 +6,11 @@ import firestoreInstance from 'firebaseConfig';
 import { Link } from 'react-router-dom';
 
 function Products() {
-  const [sortingOption, setSortingOption] = useState('-');
+  const [sortingOption, setSortingOption] = useState('-'); // Opción predeterminada
   const [products, setProducts] = useState([]);
-  const [sortedProducts, setSortedProducts] = useState([]);
+  const [sortedProducts, setSortedProducts] = useState([]); // Nuevo estado para productos ordenados
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const fetchProductsFromCollections = async () => {
-    try {
-      const cachedProducts = localStorage.getItem('cachedProducts');
-
-      if (cachedProducts) {
-        // si hay productos en localstorage los utilizo desde ahi
-        console.log('productos obtenidos de localstorage: ');
-        return JSON.parse(cachedProducts);
-      }
-
-      const productsData = [];
-
-      for (const collectionName of collections) {
-        const productsCollection = collection(firestoreInstance, collectionName);
-        const productsSnapshot = await getDocs(productsCollection);
-
-        const collectionProducts = productsSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          collection: collectionName,
-          ...doc.data(),
-        }));
-
-        productsData.push(...collectionProducts);
-      }
-
-      // guardo los productos en local storage para hacer menos consultas a la base de datos
-      localStorage.setItem('cachedProducts', JSON.stringify(productsData));
-
-      return productsData;
-    } catch (error) {
-      console.error('Error al cargar productos:', error);
-      return [];
-    }
-  };
 
   useEffect(() => {
     const fetchCollectionsFromDatabase = async () => {
@@ -61,21 +26,62 @@ function Products() {
     fetchCollectionsFromDatabase().then(async (collectionsList) => {
       setCollections(collectionsList);
 
-      fetchProductsFromCollections().then((allProducts) => {
-        // convierto los precios de string a números por las dudas
-        const productsWithNumericPrice = allProducts.map((product) => ({
-          ...product,
-          price: parseFloat(product.price),
-        }));
+      // Verificar si los productos están en localStorage
+      const cachedProducts = localStorage.getItem('cachedProducts');
 
-        setProducts(productsWithNumericPrice);
-        setSortedProducts(productsWithNumericPrice);
+      if (cachedProducts) {
+        // Si hay productos en localstorage, los utilizamos
+        console.log('productos obtenidos de localStorage: ', cachedProducts);
+        const parsedProducts = JSON.parse(cachedProducts);
+        setProducts(parsedProducts);
+        setSortedProducts(parsedProducts);
         setLoading(false);
-      });
+      } else {
+        console.log('productos obtenidos de la base de datos, para luego guardarlos en localstorage')
+        // Si no están en localstorage, los obtenemos de la base de datos
+        const fetchProductsFromCollections = async () => {
+          try {
+            const productsData = [];
+
+            for (const collectionName of collectionsList) {
+              const productsCollection = collection(firestoreInstance, collectionName);
+              const productsSnapshot = await getDocs(productsCollection);
+
+              const collectionProducts = productsSnapshot.docs.map((doc) => ({
+                id: doc.id,
+                collection: collectionName,
+                ...doc.data(),
+              }));
+
+              productsData.push(...collectionProducts);
+            }
+
+            return productsData;
+          } catch (error) {
+            console.error('Error al cargar productos:', error);
+            return [];
+          }
+        };
+
+        fetchProductsFromCollections().then((allProducts) => {
+          // convierto los precios de string a numeros por las dudas
+          const productsWithNumericPrice = allProducts.map((product) => ({
+            ...product,
+            price: parseFloat(product.price), 
+          }));
+
+          setProducts(productsWithNumericPrice);
+          setSortedProducts(productsWithNumericPrice); //al principio los productos ordenados son iguales a los productos cargados
+          setLoading(false);
+          // guardo los productos en localStorage la primera vez q los traigo de la base de datos para cachearlos en otra oportunidad sin hacer otra consulta a la base de datos
+          localStorage.setItem('cachedProducts', JSON.stringify(productsWithNumericPrice));
+        });
+      }
     });
   }, []);
 
   useEffect(() => {
+    // ordeno los productos segun la opcion solicitada
     const sortProducts = () => {
       switch (sortingOption) {
         case 'price-ascending':
@@ -87,7 +93,7 @@ function Products() {
         case 'alpha-descending':
           return [...sortedProducts].sort((a, b) => b.name.localeCompare(a.name));
         default:
-          return [...sortedProducts];
+          return [...sortedProducts]; // este seria el orden predeterminado o cuando no hay opcion seleccionada
       }
     };
 
@@ -143,4 +149,3 @@ function Products() {
 }
 
 export default Products;
-
