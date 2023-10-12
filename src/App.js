@@ -12,46 +12,46 @@ import ScrollToTop from 'components/scrollToTop/ScrollToTop';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [isCartEmpty, setIsCartEmpty] = useState(true); // Agrega el estado isCartEmpty
+  const [isCartEmpty, setIsCartEmpty] = useState(true); 
 
-  // Función para agregar un producto al carrito
+  // funcion para agregar un producto al carrito
   const addProductToCart = (product) => {
-    // Verifica si el producto ya está en el carrito
+    // verifica si el producto ya está en el carrito
     const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
 
     if (existingProductIndex !== -1) {
-      // Si el producto ya está en el carrito, incrementa la cantidad
+      // si el producto ya esta en el carrito, incrementa la cantidad
       const updatedCart = [...cartItems];
       updatedCart[existingProductIndex].quantity += 1;
       setCartItems(updatedCart);
     } else {
-      // Si el producto no está en el carrito, agrégalo
+      // si el producto no esta en el carrito, agrégalo
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
     setIsCartEmpty(false);
   };
 
-  // Función para eliminar un producto del carrito
+  // funcion para eliminar un producto del carrito
   function removeProductFromCart(productId) {
-    // Filtra los productos en el carrito para eliminar el que coincide con el productId
+    // filtro los productos en el carrito para eliminar el que coincide con el productId
     const updatedCartItems = cartItems.filter((product) => product.id !== productId);
 
-    // Actualiza el estado con el nuevo array de cartItems sin el producto eliminado
+    // actualizo el estado con el nuevo array de cartItems sin el producto eliminado
     setCartItems(updatedCartItems);
     setIsCartEmpty(updatedCartItems.length === 0);
   }
 
   function handleQuantityChange(productId, newQuantity) {
-    // Copia el array de cartItems para no mutar el estado directamente
+    // copio el array de cartItems para no mutar el estado directamente
     const updatedCartItems = [...cartItems];
 
-    // Busca el producto en el carrito por su ID
+    // busco el producto en el carrito por su ID
     const productIndex = updatedCartItems.findIndex((product) => product.id === productId);
 
-    // Si se encuentra el producto en el carrito, actualiza su cantidad
+    // si se encuentra el producto en el carrito, entonces actualizo su cantidad
     if (productIndex !== -1) {
       updatedCartItems[productIndex].quantity = newQuantity;
-      setCartItems(updatedCartItems); // Actualiza el estado con el nuevo carrito
+      setCartItems(updatedCartItems); // atualizo el estado con el nuevo carrito
     }
   }
 
@@ -85,3 +85,14 @@ function App() {
 }
 
 export default App;
+
+// EN RESUMEN EN ESTE COMPONENTE ESTOY HACIENDO LO SIGUIENTE:
+
+// me estoy comunicando con los otros componentes , por ejemplo en el componente productDetail 
+// hago toda la funcionalidad de traer los productos y los voy añadiendo al carrito con los 
+// respectivos botones y demas, pero la funcion principal la termina ejecutando
+// desde app.js, es decir por ejemplo en productDetail tengo el producto y 
+// cuando clickeo en agregar al carrito le paso una funcion con un onclick la cual se llama
+// handleToAddCart y dentro de la funcion handleaddtocart le digo a la funcion addproducttocart(enapp.js) 
+// que voy a mandarle el producto detallado con su id y datos. entonces la funcion addproducttocart se 
+// termina de actualizar desde el componente app. 

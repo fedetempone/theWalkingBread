@@ -1,6 +1,5 @@
 import Navbar from 'components/navbar/Navbar';
 import Footer from 'components/footer/Footer';
-// import { useCart } from 'components/cartProvider/CartProvider';
 import './layout.css'
 
 

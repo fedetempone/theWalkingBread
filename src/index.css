@@ -5,6 +5,12 @@ html, body, #root {
     font-family: 'dead_kansasregular' !important;
   }
 
+  body{
+    position: relative;
+    padding-bottom: 350px !important;
+    min-height: 100vh;
+  }
+
   @font-face {
     font-family: 'dead_kansasregular';
     src: url('dead_kansas.woff2') format('woff2'),

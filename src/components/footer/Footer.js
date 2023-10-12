@@ -7,8 +7,8 @@ function Footer() {
   const location = useLocation();
 
   return (
-    <footer className='clearfix'>
-      <nav className="navFooter">
+    <div className='footer'>
+      <div className="navFooter">
         <div className="navLinksFooter">
           <ul>
             <li>
@@ -36,39 +36,10 @@ function Footer() {
         <div className="logoFooter">
           <img src={img_logo} alt="" />
         </div>
-      </nav>
+      </div>
       <p>All Rights reserved 2023 - Federico Tempone &copy;</p>
-    </footer>
+    </div>
   );
 }
 
 export default Footer;
-
-
-// import './footer.css'
-// import img_logo from '../../images/navlogo.png'
-
-// function Footer() {
-//   return (
-//     <>
-//      <footer className='clearfix'>
-//         <nav className="navFooter">
-//             <div className="navLinksFooter">
-//                 <ul>
-//                     <li><a href="/#/about">ABOUT US</a></li>
-//                     <li><a href="https://drive.google.com/file/d/1BiQmkwr3ZuW_Ice4fHbfElLnxDYaMx6D/view?usp=sharing">QUALITY POLITICS</a></li>
-//                     <li><a href="https://drive.google.com/file/d/1b9CPbSH5T121HJAxQUFJosyrPEVuMBpB/view?usp=sharing">TERMINOS Y CONDICIONES</a></li>
-//                     <li><a href="/#/contact">CONTACT</a></li>
-//                 </ul>
-//             </div>
-//             <div className="logoFooter">
-//                 <img src={img_logo} alt=""/>
-//             </div>
-//         </nav>
-//         <p>All Rights reserved 2023 - Federico Tempone &copy;</p>
-//     </footer>
-//     </>
-//   )
-// }
-
-// export default Footer

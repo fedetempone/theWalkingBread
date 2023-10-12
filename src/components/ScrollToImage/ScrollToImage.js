@@ -18,6 +18,10 @@ class ScrollToImage extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
+  // cuando el usuario scrollea hacia abajo y llega al breakpoint comienza el efecto
+  // breakpoint es el punto de quiebre vertical de la pagina donde su valor es 300px
+  // entonces de arriba hacia abajo cuando comienza el scroll y supera los 300px
+  // aplica el efecto cambiando el valor de isScrolled a true
   handleScroll = () => {
     const breakpoint = 300;
 
@@ -32,6 +36,9 @@ class ScrollToImage extends Component {
     const { isScrolled } = this.state;
 
     return (
+      // si isScrolled es true entonces aplico la clase scrolled al containerScrollEffect
+      // si es false entonces no hago nada. obviamente el efecto lo esta haciendo la clase
+      // scrolled. Desde este codigo solo controlamos cuando y como controlar el scroll.
       <div className={`containerScrollEffect ${isScrolled ? 'scrolled' : ''}`}>
         <div className="background-image"></div>
         <div className="video">

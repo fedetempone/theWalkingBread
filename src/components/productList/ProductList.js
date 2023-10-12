@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../../firebaseConfig';
 import LoadingFiles from 'components/loadingFiles/LoadingFiles';
+import Divisors from 'components/divisors/Divisors';
 
 // defino una funcion asincrona fuera del componente para que tenga un alcance global abajo explico porque..
 // esta funcion recibe 2 argumentos, el primero es collectionName va a ser el nombre de la coleccion
@@ -47,7 +48,7 @@ const fetchProductsFromCollection = async (collectionName, setLoading) => {
 
 function ProductList() {
   const { collectionName } = useParams();
-  //muestro el valor del parametro de la ruta
+  //este es el valor del parametro de la ruta
   const [products, setProducts] = useState([]);
   // defino products como array vacio para ir cargandolo mas adelante
   const [loading, setLoading] = useState(true);
@@ -81,9 +82,12 @@ function ProductList() {
 
   return (
     <LoadingFiles promise={() => fetchProductsFromCollection(collectionName, setLoading)}>
+      {/* aca a la funcion fecthproducts le paso los mismos parametros que recibe cuando esta declarada arriba */}
       {loading ? (
         <p>Cargando productos...</p>
       ) : (
+        <>
+        <Divisors text={collectionName}></Divisors>
         <div className="products-container">
           <div className="product-list">
 
@@ -103,6 +107,7 @@ function ProductList() {
             ))}
           </div>
         </div>
+        </>
       )}
     </LoadingFiles>
   );

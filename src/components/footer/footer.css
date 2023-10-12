@@ -1,6 +1,6 @@
-footer {
+.footer {
     background-color:#17181a;
-    position: relative;
+    position: absolute;
     width: 100%;
     bottom: 0;
 }
@@ -34,7 +34,7 @@ footer {
     height: 100px;
 }
 
-footer p{
+.footer p{
     font-family: 'Encode Sans', sans-serif !important;
     text-align: center;
     color: white;
@@ -66,7 +66,7 @@ footer p{
         font-size: 10px;
     }
 
-    footer p{
+    .footer p{
         font-size: 0.5rem !important;
     }
 

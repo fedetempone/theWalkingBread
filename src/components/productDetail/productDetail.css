@@ -160,11 +160,11 @@
 
 .added-to-cart-message {
     position: absolute;
-    top: 50%;
+    text-align: center;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fd0404;
-    padding: 50px;
+    padding: 10px;
     font-weight: bold;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

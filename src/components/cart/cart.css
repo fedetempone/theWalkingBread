@@ -95,11 +95,21 @@
   .confirmationMessage.show,
   .emptyCartMessage.show {
     display: flex;
-    animation: fadeInOut 9s ease; /* Agregar una animación de entrada/salida si lo deseas */
+    animation: fadeInOut 9s ease; 
   }
   
   /* Animación de entrada/salida */
   @keyframes fadeInOut {
     0%, 100% { opacity: 0; }
     25%, 75% { opacity: 1; }
+  }
+
+  .showMoreProductsLink{
+    margin: 0px auto;
+    padding: 20px;
+    color: blue;
+  }
+
+  .showMoreProductsLink:hover{
+    color: #f44336;
   }
