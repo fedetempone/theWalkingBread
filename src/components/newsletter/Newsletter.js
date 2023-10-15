@@ -1,109 +1,66 @@
 import React, { useState } from 'react';
 import './newsletter.css'
 
-function Newsletter() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-  });
-
-  const [formErrors, setFormErrors] = useState({
-    username: '',
-    email: '',
-  });
-
+const Newsletter = () => {
+  // defino estado para chequear si esta suscripto o no
   const [subscribed, setSubscribed] = useState(false);
+  // defino estado para para almacenar los datos del formulario
+  const [formData, setFormData] = useState({ username: '', email: '' });
+  // defino estado para almacenar los errores
+  const [formErrors, setFormErrors] = useState({});
 
-  const handleInputChange = (e) => {
-    const lettersOnlyPattern = /^[A-Za-z]+$/;
-    // el e.target toma el elemento del DOM que descandeno el cambio
-    // en este caso el input. En este caso en particular el input tiene un name "username"
-    // entonces name va a equivaler a "username" o name va a equivaler a "email" porque
-    // ambos input tanto el que tiene el name username como el que tiene el name email estan
-    // invocando a la misma funcion. Y value sera lo que el usuario vaya ingresando en este input.
+  // actualizo el estado de formadata creando una copia del mismo
+  // y pasandole los nuevos valores que ingresa el usuario en tiempo real
+  const handleChange = (e) => {
+    // e.target representa el elemnto que descadena el evento
+    // en este caso el campo de entrada
     const { name, value } = e.target;
-    // entonces aca hago un condicional y pregunto, che el input que desencadeno la funcion
-    // tiene en su atributo name "username" ? si es afirmativo entonces vuelvo a preguntar
-    // y ademas lo que esta ingresando actualmente el usuario en el input (value) NO coincide con
-    // la condicion que estoy poniendo en "lettersOnlyPattern"? (que sean solo letras), si es afirmativo
-    // entonces muestro el error porque lo que escribio el usuario SI tiene que coincidir con letersonlypattern. 
-    // el error lo muestro actualizando setFormErros creando una copia del mismo.
-    if (name === 'username' && !lettersOnlyPattern.test(value)) {
-      setFormErrors((prevErrors) => ({
-        ...prevErrors,
-        username: 'No puedes ingresar números en el nombre.',
-      }));
-      // si la condicion no se cumple entonces quiere decir que el usuario no ingreso numeros y en su lugar
-      // ingreso los datos correctamente. Entonces borro los errores si es que habian sido ejecutados.
-      // y nuevamente creo una copia del objeto setFormErrors para actualizarlo.
-    } else {
-      setFormErrors((prevErrors) => ({
-        ...prevErrors,
-        username: '',
-      }));
-    }
-    // por ultimo creo una copia del objeto formData y actualizo al mismo con 
-    // esta nueva copia, pasandole los nuevos valores que ha ingresado el usuario.
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  // funcion para validar el formulario al principio el formulario sera valido hasta que
-  // se detecte algun error.
+  // funcion para validar el formulario
   const validateForm = () => {
-    let isValid = true;
-    // creo una variable newFormErrors para detectar potenciales errores.
-    const newFormErrors = {
-      username: '',
-      email: '',
-    };
+    const errors = {};
 
-    // empiezo con la validacion. si el campo username esta en blanco a la hora de enviar
-    // el formulario entonces actualizo la variable newformerrors con el error correspondiente
-    // y luego actualizo la variable isValid a false para que el formulario no se valide porque
-    // se detectaron errores.
-    if (formData.username.trim() === '') {
-      newFormErrors.username = 'POR FAVOR INGRESÁ UN NOMBRE VÁLIDO';
-      isValid = false;
+    // si el usuario ingreso un nombre incorrecto entonces muestra el error
+    // en este caso no puede ingresar numeros
+    if (!/^[a-zA-Z]+$/.test(formData.username)) {
+      errors.username = 'El nombre de usuario no puede contener numeros.';
     }
 
-    // si el email esta en blanco entonces hace lo mismo actualiza isValid a false y newformerrors
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (formData.email.trim() === '') {
-      newFormErrors.email = 'EL EMAIL ES REQUERIDO';
-      isValid = false;
-      // si el campo no esta vacio el email tiene que tener el formato que correpsonde a la expresion 
-      // regular emailPattern, si no coincide entonces otra vez actualiza todo con su error y demas.
-    } else if (!emailPattern.test(formData.email)) {
-      newFormErrors.email = 'EL EMAIL NO ES VALIDO';
-      isValid = false;
+    // si el usuario ingresa un mail incorrecto entonces muestra el erorr
+    // en este caso debe incluir el arroba.
+    if (!formData.email.includes('@')) {
+      errors.email = 'El Email no es valido.';
     }
 
-    // terminada la validacion actualiza el setFormErrors con o sin nuevos errores.
-    setFormErrors(newFormErrors);
-    // y finalmente devuelve el formulario validado en true o false dependiendo si se encontraron
-    // o no se encontraron errores.
-    return isValid;
+    return errors;
   };
 
-  // cuando se envia el formulario ejecuto esta funcion para corroborar si la funcion de
-  // validacion devolvio true o false, si devolvio true entonces actualizo el estado de 
-  // setSuscribed para mostrar el mensaje de suscripcion exitosa. En cambio si devuelve
-  // false no se muestra ninung mensaje de suscripcion exitosa y en su lugar se van a 
-  // mostrar los mensajes de error dentro de validateForm.
+  // esta funcion se ejecuta cuando el usuario valida el formulario
   const handleSubmit = (e) => {
+    // para que no se actualice la pagina cancelando el comportamiento
+    // predeterminado del formulario
     e.preventDefault();
-    if (validateForm()) {
+    // llamo a validateform para validar datos y almaceno los errores
+    // si es que se obtuvieron en la variable errors.
+    const errors = validateForm();
+
+    // si la variable error esta vacia
+    if (Object.keys(errors).length === 0) {
+      // entonces muestro el mensaje de suscripcion exitosa
       setSubscribed(true);
+    } else {
+      // si la variable contiene errores entonces muestro el
+      // mensaje de error correspondiente
+      setFormErrors(errors);
     }
   };
 
   return (
     <>
       <div className="newsletterContainer">
-        {/* si suscribed es true entonces muestro el mensajito de suscripcion */}
+        {/* si la sucsripcion es exitosa muestro el mensaje correspondiente */}
         {subscribed ? (
           <div className="thankYouMessage">
             <p>¡Gracias por suscribirte a nuestro boletín informativo!</p>
@@ -111,10 +68,10 @@ function Newsletter() {
             <p>Para obtenerlo, simplemente haz clic en el enlace que te hemos enviado por correo electrónico.</p>
             <p>¡Estamos emocionados de tenerte como parte de nuestra comunidad!</p>
           </div>
-          // si suscribed es false entonces muestro estos elementos.
+          // si aun no ha sido validado muestro los campos para suscribirse
         ) : (
           <>
-            <p>Inscribite para recibir descuentos <br /> y enterarte de nuestras ofertas !</p>
+            <p>Inscríbete para recibir descuentos y enterarte de nuestras ofertas!</p>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -124,11 +81,10 @@ function Newsletter() {
                 className="field"
                 autoComplete="username"
                 required
-                onChange={handleInputChange}
+                value={formData.username}
+                onChange={handleChange}
               />
-              {/* si formErrors.username esta vacia no muestro el span de error, si formErrores tiene errores
-                  entonces muestro renderizo el elemento span mostrando el error de formErorrs
-              */}
+              {/* campo para mostrar errores si es que los hay */}
               {formErrors.username && <span className="error">{formErrors.username}</span>}
               <input
                 type="email"
@@ -138,11 +94,10 @@ function Newsletter() {
                 className="field"
                 autoComplete="on"
                 required
-                onChange={handleInputChange}
+                value={formData.email}
+                onChange={handleChange}
               />
-              {/* si formErrors.username esta vacia no muestro el span de error, si formErrores tiene errores
-                  entonces muestro renderizo el elemento span mostrando el error de formErorrs
-              */}
+              {/* campo para mostrar errores si es que los hay */}
               {formErrors.email && <span className="error">{formErrors.email}</span>}
               <input
                 type="submit"
@@ -156,6 +111,6 @@ function Newsletter() {
       </div>
     </>
   );
-}
+};
 
 export default Newsletter;
