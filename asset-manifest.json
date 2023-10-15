@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/theWalkingBread/static/css/main.277e5d7c.css",
-    "main.js": "/theWalkingBread/static/js/main.ef7e8d96.js",
+    "main.js": "/theWalkingBread/static/js/main.d599ecba.js",
     "static/media/panaderia.jpg": "/theWalkingBread/static/media/panaderia.ab13cf36a359bd3db63d.jpg",
     "static/media/bakery.mp4": "/theWalkingBread/static/media/bakery.f9ece14fcd71a4f160fd.mp4",
     "static/media/medialunas.jpg": "/theWalkingBread/static/media/medialunas.11def0749d0a1894a618.jpg",
@@ -27,10 +27,10 @@
     "static/media/icon_shopping_cart.svg": "/theWalkingBread/static/media/icon_shopping_cart.995748b73b8792b4b60fd1ed0515faaa.svg",
     "index.html": "/theWalkingBread/index.html",
     "main.277e5d7c.css.map": "/theWalkingBread/static/css/main.277e5d7c.css.map",
-    "main.ef7e8d96.js.map": "/theWalkingBread/static/js/main.ef7e8d96.js.map"
+    "main.d599ecba.js.map": "/theWalkingBread/static/js/main.d599ecba.js.map"
   },
   "entrypoints": [
     "static/css/main.277e5d7c.css",
-    "static/js/main.ef7e8d96.js"
+    "static/js/main.d599ecba.js"
   ]
 }
